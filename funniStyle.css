@@ -1,0 +1,430 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(232, 230, 225);
+}
+
+.p-basic {
+    font-size: 30px;
+}
+
+.active {
+    font-size: 50px;
+}
+
+/* MOBILE VIEW */
+
+.black-screen {
+    background-image: url(/image/black\ image.jpeg);
+    max-width: 1400px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: black;
+    z-index: 10000;
+    display: none;
+}
+
+@media (max-width: 1200px) {
+  body {
+      background-color: black;
+      background-image: url(/image/black\ image.jpeg);
+      z-index: 99;
+  }
+
+  .nav, .nav-option, .reply, 
+  .leftForAd, .leftForAd2, .rightForAd, .rightForAd2,
+  .table-forum, .icon, .marquee, .table-post {
+      display: none;
+      visibility: hidden;
+  }
+
+  .black-screen {
+    display: block;
+  }
+}
+
+/* MARQUEE */
+
+.marquee {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .15);
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.marquee p {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-10%); }
+}
+
+/* NAVIGATION */
+
+nav, .nav-option {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    z-index: 10;
+    background-color: rgb(162, 162, 146);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+#nav-title {
+    margin: 0 0 0 4rem;
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.nav-option {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.25rem;
+    padding-inline-end: 3rem;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background-image: url("image/Sticker_Cipher.png");
+    background-size: cover;
+    background-position: center;
+    margin-left: 1.5rem;
+}
+
+li {
+    color: #ffffff;
+}
+
+li:hover {
+    animation: hoverAnimation 3s infinite;
+    cursor: default;
+}
+
+/* ANIMATION */
+
+.linear-wipe {
+    background: linear-gradient(to right, #ff0000 20%, #FF0 40%, rgb(43, 0, 255) 60%, #ff02e1 80%);
+    background-size: 200% auto;
+    color: #000;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 1s linear infinite;
+}
+
+@keyframes gradient {
+    to { background-position: 200% center; }
+}
+
+
+@keyframes hoverAnimation {
+        0% { color: rgb(255, 0, 0); }
+        9% { color: rgb(255, 85, 0); }
+        18% { color: rgb(255, 196, 0); }
+        27% { color: rgb(0, 255, 76); }
+        36% { color: rgb(0, 255, 251); }
+        45% { color: rgb(0, 174, 255); }
+        54% { color: rgb(0, 17, 255); }
+        63% { color: rgb(115, 0, 255); }
+        72% { color: rgb(195, 0, 255); }
+        81% { color: rgb(255, 0, 111); }
+        90% { color: rgb(255, 0, 106); }
+        100% { color: rgb(255, 0, 0); }
+}
+
+/* ========================================================================================== */
+/* TABLE FORUM ON MAIN HTML */
+
+.table-forum {
+    border: 1px solid black;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+}
+
+.thead-forum {
+    background-color: rgb(162, 162, 146);
+    color: white;
+}
+
+#th-empty {
+    width: 7%;
+} 
+
+#th-interaction {
+    width: 15%;
+}
+
+td {
+    height: 1rem;
+}
+
+.post-date {
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    color: gray;
+    margin-right: 0.5rem;
+}
+
+.leftForAd, .leftForAd2, .rightForAd, .rightForAd2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftForAd, .leftForAd2 {
+    float: left;
+    margin-top: 2rem;
+}
+
+.rightForAd, .rightForAd2 {
+    float: right;
+    margin-top: 2rem;
+}
+
+.leftForAd {
+    z-index: 3;
+    gap: 2rem;
+    left: 3rem;
+    top: 10rem;
+    margin-left: 1.5rem;
+}
+
+.leftForAd2 {
+    z-index: 3;
+    gap: 2rem;
+    left: 12rem;
+    top: 15rem;
+    margin-left: 0.2vw;
+}
+
+.rightForAd {
+    z-index: 3;
+    gap: 2rem;
+    right: 3rem;
+    top: 10rem;
+    margin-right: 1.5rem;
+}
+
+.rightForAd2 {
+    z-index: 3;
+    gap: 2rem;
+    right: 12rem;
+    top: 10rem;
+    margin-right: 0.2vw;
+}
+
+.reply {
+    background-image: url(image/forum-icon-png-21.png);
+    background-size: cover;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ========================================================================================== */
+/* FORUM TOPIC */
+
+.color-header {
+    background-color: rgb(205, 70, 70);
+    height: 1rem;
+}
+
+.table-post {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 71%;
+    margin-left: 6rem;
+    margin-right: auto;
+    margin-top: 2rem;
+    justify-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
+}
+
+#closeheader-post {
+    text-align: left;
+    font-size: 20px;
+    padding-left: 0.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.th-titlepost {
+    font-size: 30px;
+    text-align: left;
+    padding-top: 0.7rem;
+    padding-left: 1rem;
+}
+
+.tbody-post {
+    background-color: rgb(227, 225, 216);
+}
+
+.text-post {
+    font-size: 18px;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* ========================================================================================== */
+/* USER PROFILE CSS */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.frame {
+    width: 53px;
+    height: 50px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-portraits {
+    border-radius: 50%;
+    border: 2px solid rgb(205, 70, 70);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.username-post {
+    font-size: 16px;
+}
+
+.username-reply {
+    font-size: 16px;
+    margin-bottom: 0.25rem;
+}
+
+.td-profileLine {
+    min-height: 60px;
+    height: auto;
+    vertical-align: middle;
+    padding: 0.5rem;
+}
+
+.decor-span {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    background-color: rgb(181, 78, 78);
+    display: block;
+}
+
+.replyTotal {
+    font-size: 22px;
+}
+
+.td-replyLine {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.speech {
+    font-size: 18px;
+    color: #000000;
+    background: rgb(203, 200, 191);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 50rem;
+}
+
+.reply-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* EXTRA TEXT */
+.ad-bubble {
+    font-size: 18px;
+    color: #000000;
+    background: rgb(203, 200, 191);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 16rem;
+    max-height: 16rem;
+    margin-top: 3rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ad-text {
+    font-size: 20px;
+    text-align: center;
+}
+
+.ad-text-TITLE {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.ad-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ========================================================================================== */
+/* USERNAME PROFILE ADJUSTMENTS */
+.userProfilePic {
+    width: 135%;
+    height: 135%;
+    object-fit: cover;
+}
+
+#userProfileMydei {
+    transform: translate(-10%, -10%);
+}
+
+#userProfileEvernight {
+    transform: translate(-13%, -10%);
+}
+
+/* ========================================================================================== */
+/* OVERLAY TEXT */
+.overlayText {
+    font-size: 85px;
+    position: fixed;
+    bottom: 16rem;
+    left: 34rem;
+    display: none;
+}
+
+.activeOverlay {
+    display: block;
+    white-space: pre;
+}
