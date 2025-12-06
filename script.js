@@ -6,7 +6,7 @@ document.querySelectorAll(".random-int").forEach(el => {
 // RETURN POST TOPIC
 const returnButton = document.getElementById("closeheader-post");
 returnButton.addEventListener("click", (event) => {
-    location.href = "../main.html";
+    location.href = "../index.html";
 })
 
 // AUDIO
